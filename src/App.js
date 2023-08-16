@@ -42,15 +42,11 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.MainButton.text = "View Order))";
+    tele.MainButton.text = "View Order)()";
     tele.MainButton.show();
   };
 
- if(tele.onEvent('mainButtonClicked', callback)){
-    tele.close();
-    tele.sendData(data);
-  };
-
+ 
 
   return (
     <>
