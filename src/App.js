@@ -46,6 +46,10 @@ function App() {
     tele.MainButton.show();
   };
 
+  useEffect(() => {
+    tele.close();
+  });
+
 
   return (
     <>
