@@ -46,9 +46,10 @@ function App() {
     tele.MainButton.show();
   };
 
-  useEffect(() => {
+ if(tele.onEvent('mainButtonClicked', callback)){
     tele.close();
-  });
+    tele.sendData(data);
+  };
 
 
   return (
