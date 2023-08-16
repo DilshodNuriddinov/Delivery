@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
+import { Telegraf } from "telegraf";
+import { callback } from "telegraf/typings/button";
 
 const { getData } = require("./db/db");
 const foods = getData();
@@ -46,9 +48,10 @@ function App() {
     tele.MainButton.show();
   };
 
-  useEffect(() => {
+  if(tele.onEvent('mainButtonClicked', callback)){
     tele.close();
-  });
+    tele.sendData(cartItems);
+  }
 
 
   return (
