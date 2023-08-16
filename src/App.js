@@ -42,9 +42,13 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.MainButton.text = "View Order";
+    tele.MainButton.text = "View Order))";
     tele.MainButton.show();
   };
+
+  useEffect(() => {
+    tele.close();
+  });
 
 
   return (
