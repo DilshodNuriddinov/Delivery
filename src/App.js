@@ -48,11 +48,6 @@ function App() {
     tele.MainButton.show();
   };
 
-  if(tele.onEvent('mainButtonClicked', callback)){
-    tele.close();
-    tele.sendData(cartItems);
-  }
-
 
   return (
     <>
