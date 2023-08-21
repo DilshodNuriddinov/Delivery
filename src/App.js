@@ -45,11 +45,6 @@ function App() {
   const onCheckout = () => {
     tele.MainButton.text = "View Order!";
     tele.MainButton.show();
-
-    if(MainButton.onClick(callback)){
-      tele.close();
-      cartItems.sendData(data);
-    }
   };
 
  
