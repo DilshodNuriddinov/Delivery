@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
+import { callback } from "telegraf/typings/button";
 
 const { getData } = require("./db/db");
 const foods = getData();
@@ -42,8 +43,13 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.MainButton.text = "View Order)()";
+    tele.MainButton.text = "View Order";
     tele.MainButton.show();
+
+    if(MainButton.onClick(callback)){
+      tele.close();
+      cartItems.sendData(data);
+    }
   };
 
  
